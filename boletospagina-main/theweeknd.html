@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TICKET.COM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .banner {
+            position: relative;
+            background-image: url(imagenes/portadasos.jfif);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        .banner-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tabs button:hover, .tabs button.active {
+            border-bottom: 3px solid #e60000;
+            color: #e60000;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .artist-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .artist-info img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .artist-description {
+            max-width: 600px;
+        }
+
+        .artist-description h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .social-icons img {
+            width: 50px; 
+            height: 50px; 
+        }
+
+        .social-icons a {
+            margin-right: 4px;
+            color: #333;
+            text-decoration: none;
+            width: 20;
+        }
+
+        .member-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .member-card {
+            background-color: #333;
+            color: #fff;
+            width: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .member-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 3px solid #e60000;
+        }
+
+        .member-card h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .member-card p {
+            font-size: 0.9em;
+            margin-top: 5px;
+            color: #bbb;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .banner {
+            position: relative;
+            background-image: url(imagenes/livethe.jfif);
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-content {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .banner-content h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-bottom: 2px solid #000000;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .tabs button.active {
+            color: #e60000;
+            border-bottom: 2px solid #e60000;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .artist-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .artist-info img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .artist-description {
+            max-width: 600px;
+        }
+
+        .artist-description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a img {
+            width: 40px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TICKET.COM</div>
+        <nav>
+            <a href="paginaincio.html">Inicio</a>
+            <a href="#">Salir</a>
+        </nav>
+    </header>
+    <section class="banner">
+        <div class="banner-content">
+            <p>R&B</p>
+            <h1>AFTER HOURS TOUR</h1>
+            <a href="#" style="color: #e60000; font-weight: bold;">Tickets</a>
+        </div>
+    </section>
+
+    <div class="tabs">
+        <button onclick="showSection('artist')" class="active">Sobre el Artista</button>
+        <button onclick="showSection('concerts')">Conciertos</button>
+    </div>
+
+    <section id="artist" class="content">
+        <div class="artist-info">
+            <img src="imagenes/thwwn.jfif" alt="5 Seconds Of Summer">
+            <div class="artist-description">
+                <h2>The Weeknd</h2>
+                <p>The Weeknd (nombre real: Abel Makkonen Tesfaye) es un cantante, compositor y productor canadiense, nacido el 16 de febrero de 1990 en Toronto, Canadá. Es conocido por su distintiva voz, que combina R&B, pop y elementos de música electrónica. Saltó a la fama en 2010 con sus mixtapes House of Balloons, Thursday y Echoes of Silence. Su estilo único y su enfoque en temas como el amor, la fama y las luchas internas le han ganado reconocimiento mundial.</p>
+                <div class="social-icons">
+                    <a href="https://open.spotify.com/intl-es/artist/1Xyo4u8uXC1ZmMpatF05PJ" target="_blank">
+                        <img src="imagenes/spotify.jpg" alt="Spotify">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC0WP5P-ufpRfjbNrmOWwLBQ" target="_blank">
+                        <img src="imagenes/youtube.jpg" alt="YouTube">
+                    </a>
+                    <a href="https://music.apple.com/us/artist/the-weeknd/479756766" target="_blank">
+                        <img src="imagenes/applemusic.jpg" alt="Apple Music">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="member-cards">
+            <div class="member-card">
+                <img src="imagenes/The Weeknd clôture sa trilogie avec l’album « Hurry Up Tomorrow » _ Une révélation attendue.jfif" alt="fgf">
+                <p>A lo largo de su carrera, The Weeknd ha lanzado varios álbumes exitosos que lo han consolidado como una de las principales figuras del pop y el R&B contemporáneo. Su tercer álbum, Starboy (2016), con colaboraciones con Daft Punk y Lana Del Rey, fue un gran éxito comercial, con el sencillo principal, "Starboy", alcanzando el éxito mundial.</p>
+            </div>
+            <div class="member-card">
+                <img src="imagenes/sss.jfif" alt="dgdd">
+                <p>La influencia de artistas como Michael Jackson, Prince y Kanye West se refleja en su estilo, tanto musical como visual. The Weeknd sigue siendo una de las figuras más influyentes en la música popular moderna, con un impacto significativo en las tendencias musicales y culturales actuales.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="concerts" class="content" style="display: none;">
+        <div class="concert" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3 style="color: #e60000; margin-bottom: 15px;">Concierto en Madrid</h3>
+            <p style="margin-bottom: 10px;"><strong>Fecha:</strong> 23 de Diciembre 2024</p>
+            <p style="margin-bottom: 15px;"><strong>Ubicación:</strong> WiZink Center, Madrid</p>
+            <a href="perfil.html" style="text-decoration: none; padding: 10px 20px; background-color: #e60000; color: white; border-radius: 5px; font-weight: bold; transition: background-color 0.3s;">Comprar Boletos</a>
+        </div>
+        <div class="concert" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3 style="color: #e60000; margin-bottom: 15px;">Concierto en Barcelona</h3>
+            <p style="margin-bottom: 10px;"><strong>Fecha:</strong> 25 de Diciembre 2024</p>
+            <p style="margin-bottom: 15px;"><strong>Ubicación:</strong> Palau Sant Jordi, Barcelona</p>
+            <a href="perfil.html" style="text-decoration: none; padding: 10px 20px; background-color: #e60000; color: white; border-radius: 5px; font-weight: bold; transition: background-color 0.3s;">Comprar Boletos</a>
+        </div>
+    </section>
+    <script>
+        function showSection(section) {
+            const artistSection = document.getElementById('artist');
+            const concertsSection = document.getElementById('concerts');
+            const artistButton = document.querySelector('.tabs button:nth-child(1)');
+            const concertsButton = document.querySelector('.tabs button:nth-child(2)');
+
+            if (section === 'artist') {
+                artistSection.style.display = 'block';
+                concertsSection.style.display = 'none';
+                artistButton.classList.add('active');
+                concertsButton.classList.remove('active');
+            } else if (section === 'concerts') {
+                artistSection.style.display = 'none';
+                concertsSection.style.display = 'block';
+                artistButton.classList.remove('active');
+                concertsButton.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
